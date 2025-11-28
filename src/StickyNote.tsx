@@ -1,11 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Trash2, Palette } from 'lucide-react';
 import { Colorful } from '@uiw/react-color';
-interface Note {
-  id: string;
-  content: string;
-  color: string;
-}
+import { Note } from './types';
 
 interface StickyNoteProps {
   note: Note;
@@ -94,6 +90,10 @@ export function StickyNote({ note, onUpdate, onDelete }: StickyNoteProps) {
       ) : (
         <div className="whitespace-pre-wrap wrap-break-word cursor-pointer min-h-[150px]">{content}</div>
       )}
+
+      <div className='absolute bottom-1 left-5'>
+        <p> {note.timestamp}</p>
+      </div>
 
       {/* Edit Hint */}
       {!isEditing && !showcolor && (
