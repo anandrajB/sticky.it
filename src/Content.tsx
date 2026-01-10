@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { StickyNote } from './StickyNote';
 import { Plus } from 'lucide-react';
 import useDb from 'use-db';
